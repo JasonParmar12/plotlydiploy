@@ -89,7 +89,7 @@ function buildCharts(sample) {
      title: "Top 10 Bacteria Found",
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, chartLayout);
+    Plotly.newPlot("bar", barData, barLayout);
   });
 
   // Bar and Bubble charts
