@@ -90,6 +90,41 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+
+    var washingFrequency = sampleData.filter("wfreq")
+     
+    // 4. Create the trace for the gauge chart.
+    var gaugeData = [
+      {
+          domain: {x: [0,1], y: [0,1]},
+          value: wfreq,
+          type: "indicator",
+          mode: "gauge+number",
+          guage: {
+            axis: {range: [null, 8]},
+            steps: [
+              {range: [0,3], color: "red"},
+              {range: [3,5], color: "yellow"},
+              {range: [6,8], color: "green"}
+            ],
+            threshold: {
+              line: {color: "black", width: 2},
+              thickness: 0.75,
+              value: wfreq
+            }
+
+          }
+      }
+     
+    ];
+    
+    // 5. Create the layout for the gauge chart.
+    var gaugeLayout = { 
+      title: "Washing Frequency"
+    };
+
+    // 6. Use Plotly to plot the gauge data and layout.
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
 
