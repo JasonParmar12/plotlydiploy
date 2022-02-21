@@ -110,8 +110,8 @@ function buildCharts(sample) {
             steps: [
               {range: [0,3], color: "red"},
               {range: [3,5], color: "orange"},
-              {range: [6,8], color: "yellow"},
-              {range: [8,10], color: "green"}
+              {range: [5,8], color: "yellow"},
+              {range: [8,10], color: "blue"}
             ],
           
             }
